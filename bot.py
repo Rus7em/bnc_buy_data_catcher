@@ -28,8 +28,9 @@ class Bot:
                 data["priceBUSD"] = float(self.bnb) * float(data['price'])
             elif data['currency'] == 'ETH':
                 data["priceBUSD"] = float(self.eth) * float(data['price'])
-            elif data['currency'] == 'BUSD':
+            elif data['currency'] == 'BUSD' or data['currency'] == 'USDT':
                 data["priceBUSD"] = float(data['price'])
+
 
             element_id = self.db.insert_document(data)
             if element_id:
